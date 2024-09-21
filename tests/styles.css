@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0eae7;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* .services {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+} */
+
+.service {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.one, .nine {
+    top: 70px;
+}
+
+.two, .ten {
+    top: 120px;
+}
+
+.three {
+    top: 200px;
+    left: 215px;
+}
+
+.eleven {
+    top: 200px;
+}
+
+.twelve {
+    top: 295px;
+    right: 250px !important;
+}
+
+.four {
+    top: 295px;
+}
+
+.five, .thirteen {
+    top: 375px;
+}
+
+.six {
+    top: 455px;
+}
+
+.eight {
+    right: 280px;
+    top: 495px;
+}
+
+.seven {
+    top: 522px;
+    left: 215px;
+}
+
+/* .eight {
+    top: 630px;
+} */
+
+.one, .five {
+    left: 300px;
+}
+
+.two, .four, .six {
+    left: 100px;
+}
+
+.nine, .eleven, .thirteen {
+    right: 100px;
+}
+
+.ten, .twelve {
+    right: 300px;
+}
+
+.description {
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+}
+
+.description p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+}

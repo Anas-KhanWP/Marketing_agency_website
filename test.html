@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,34 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #slide-info {
+            position: absolute;
+            /* Make the info box positionable anywhere */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            /* Initially hidden */
+            pointer-events: none;
+            /* Prevent blocking hover interactions */
+            z-index: 100;
+            /* Ensure it appears above everything else */
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
+
 <body>
     <div class="custom-cursor"></div>
-    
+
     <script>
         const cursor = document.querySelector('.custom-cursor');
 
         document.addEventListener('mousemove', (e) => {
-            cursor.style.top = `calc(${e.clientY}px - 20px)`;
-            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.pageY}px`;
+            cursor.style.left = `${e.pageX}px`;
         });
     </script>
 
@@ -47,52 +66,347 @@
             </div>
         </section>
 
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+        <section class="growth">
+            <div class="details">
+                <div class="heading">
+                    <h3>Thumb-Stopping Content for TikTok, LinkedIn, Facebook & Instagram</h3>
                 </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-                </div>
-                <div class="slide">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+                <div class="subhead">
+                    <p>My tailored strategies & hands-on management ensure your audience can’t look away, driving
+                        engagement & growth that
+                        converts to £’s in your pocket.</p>
                 </div>
             </div>
-        </div>
+            <div class="sliders">
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100"
+                                width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="slider slider_two">
+                    <div class="slide-track">
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100"
+                                width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                        <div class="slide" data-info="Info for Slide 1">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+                                data-info="Info for Slide 1" height="100" width="250" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-info"></div>
+                <script>
+                    const slides = document.querySelectorAll('.slide');
+                    const slideInfo = document.getElementById('slide-info');
+                    const sliders = document.querySelectorAll('.slider');
+
+                    // Function to move the slide info to the mouse position
+                    function updateInfoPosition(e) {
+                        // Set the position of slide-info based on the mouse coordinates
+                        slideInfo.style.left = `${e.pageX + 10}px`;  // Offset by 10px to avoid overlap
+                        slideInfo.style.top = `${e.pageY + 10}px`;
+                    }
+                    slides.forEach(slide => {
+                        slide.addEventListener('mouseenter', (e) => {
+                            slideInfo.textContent = slide.getAttribute('data-info');
+                            slideInfo.style.opacity = '1';  // Make it visible
+                            updateInfoPosition(e);  // Initial position update
+                            // Update position on mouse move
+                            slide.addEventListener('mousemove', updateInfoPosition);
+                        });
+
+                        slide.addEventListener('mouseleave', () => {
+                            // Resume the slider
+                            slider.classList.remove('paused');
+                            // Hide and reset info text
+                            slideInfo.textContent = '';
+                            slideInfo.style.opacity = '0';  // Hide the info when not hovering
+                            // Remove the mousemove event listener to stop updating position
+                            slide.removeEventListener('mousemove', updateInfoPosition);
+                        });
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section id="video_edit">
+            <div class="eve">
+                <h2 class="heading">Our Video Editing Quality</h2>
+                <div class="videos">
+                    <div class="video">
+                        <video src="test.mp4"></video>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video">
+                        <video src="test.mp4"></video>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video">
+                        <video src="test.mp4"></video>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video">
+                        <video src="test.mp4"></video>
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const videos = document.querySelectorAll('.video video');
+                const playButtons = document.querySelectorAll('.play-button');
+
+                playButtons.forEach((button, index) => {
+                    const video = videos[index];
+
+                    button.addEventListener('click', () => {
+                        if (video.paused) {
+                            video.play();
+                            button.style.display = 'none';
+                        } else {
+                            video.pause();
+                            button.style.display = 'flex';
+                        }
+                    });
+
+                    video.addEventListener('play', () => {
+                        button.style.display = 'none';
+                    });
+
+                    video.addEventListener('pause', () => {
+                        button.style.display = 'flex';
+                    });
+                });
+            </script>
+        </section>
+
+        <section class="container">
+            <div class="image-section">
+                <img src="bg.jpg" alt="Person with Hat">
+                <div class="services">
+                    <div class="service one">Video Editing</div>
+                    <div class="service two">Consulting</div>
+                    <div class="service three">Creative Strategy</div>
+                    <div class="service four">Script Writing</div>
+                    <div class="service five">Content Creation</div>
+                    <div class="service six">Social Media Advertising</div>
+                    <div class="service seven">Social Media Management</div>
+                    <div class="service eight">Advertising Creatives</div>
+                    <div class="service nine">Sales Training</div>
+                    <div class="service ten">Outreach Methods</div>
+                    <div class="service eleven">Neuro-Marketing</div>
+                    <div class="service twelve">LinkedIn Post Automation</div>
+                    <div class="service thirteen">Personal Brand Growth</div>
+                </div>
+                <div class="description">
+                    <p>I provide comprehensive, affordable, and bespoke marketing packages, including top-tier organic
+                        growth,
+                        social media management, creative ad campaigns, graphic design, strategic consulting, and
+                        outreach
+                        strategies, all tailored to your brand, business, or gig. I guarantee exceptional results across
+                        highly
+                        competitive markets and take a bespoke approach and creative direction whilst offering a
+                        scalable,
+                        cost-effective solution focused solely on driving revenue.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-container">
+            <div class="card takefour">
+                <img src="test30.webp" alt="Image 1">
+                <div class="text-overlay">
+                    <h3 class="img-title">Dedicated & Professional Social Media Management</h3>
+                    <p>Complete profile optimisation, graphic design content editing, some video editing and scheduling
+                        to maintain your online
+                        presence. Enjoy strategic consultations and personalised support to meet your business goals.
+                    </p>
+                </div>
+            </div>
+            <div class="card second-card">
+                <img src="test40.jpg" alt="Image 2">
+                <div class="text-overlay">
+                    <h3 class="img-title">YouTube Business & Personal Brand Growth</h3>
+                    <p>Utilise the same strategies and content styles used by top creators like Mr. Beast. Professional
+                        editing, optimised
+                        thumbnails, script writing and high-impact video strategies to grow your brands channel or your
+                        personal brand.</p>
+                </div>
+            </div>
+            <div class="card taketwo">
+                <img src="test30.webp" alt="Image 3">
+                <div class="text-overlay">
+                    <h3 class="img-title">Affordable Social Marketing</h3>
+                    <p>Transform your advertising with innovative creatives and efficient media buying. Weekly
+                        optimisations, reports and data
+                        analysis to ensure high-performing campaigns and profitable scaling margins.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="test30.webp" alt="Image 4">
+                <div class="text-overlay">
+                    <h3 class="img-title">Ad Creatives Pack</h3>
+                    <p>Up to 36 custom-designed monthly ad creatives tailored to your brand. Access expert strategies to
+                        enhance campaigns and
+                        achieve scalable, cost-effective results.
+                    </p>
+                </div>
+            </div>
+            <div class="card takefour">
+                <img src="test30.webp" alt="Image 5">
+                <div class="text-overlay">
+                    <h3 class="img-title">The ECGGROW Deluxe</h3>
+                    <p>Grow your social presence with 20+ viral yet bespoke content pieces, weekly strategic
+                        consultations, and both
+                        personalised and hands on social media management. All focused solely on driving optimal
+                        engagement, organic growth and
+                        revenue across your brands social media accounts.
+                    </p>
+                </div>
+            </div>
+            <div class="card taketwo">
+                <img src="test30.webp" alt="Image 6">
+                <div class="text-overlay">
+                    <h3 class="img-title">LinkedIn Personal & B2B Brand Growth</h3>
+                    <p>Unlock exclusive tools and proven strategies to master LinkedIn B2B and B2C outreach, boost lead
+                        generation, and scale
+                        your business using LinkedIn. With profile optimisation and personalised consulting for sales
+                        success included.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <div class="our-process">
+                <h2 class="process-title giaza">OUR PROCESS</h2>
+                <div class="steps">
+                    <div class="step step-one">
+                        <img src="random.jpg" alt="Free Web Diagnosis">
+                        <h3 class="step-title">A Free Diagnosis</h3>
+                        <p class="step-desc">I begin with a free call to explore the unique pain points of you, or your business & uncover areas for opportunities of
+                        growth!</p>
+                    </div>
+                    <div class="step step-two">
+                        <img src="random.jpg" alt="Growth Process">
+                        <h3 class="step-title">Growth Process</h3>
+                        <p class="step-desc">I implement strategic & bespoke solutions, tailored to your brand goals, designed to drive traffic, growth, revenue &
+                        engagement.</p>
+                    </div>
+                    <div class="step step-three">
+                        <img src="random.jpg" alt="Increasing KPIs">
+                        <h3 class="step-title">Increasing KPI’s</h3>
+                        <p class="step-desc">Finally, I optimise every element of your plan, so your scripts, visuals, & structure to ensure traffic & followers keep
+                        growing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
+
 </html>

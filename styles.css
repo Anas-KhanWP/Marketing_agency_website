@@ -28,7 +28,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    max-height: 270px;
+    max-height: 320px;
 }
 
 .card img {
@@ -54,4 +54,187 @@
 
 .card:hover .text-overlay {
     opacity: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* .services {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+} */
+
+.service {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.one,
+.nine {
+    top: 70px;
+}
+
+.two,
+.ten {
+    top: 120px;
+}
+
+.three {
+    top: 200px;
+    left: 215px;
+}
+
+.eleven {
+    top: 200px;
+}
+
+.twelve {
+    top: 295px;
+    right: 250px !important;
+}
+
+.four {
+    top: 295px;
+}
+
+.five,
+.thirteen {
+    top: 375px;
+}
+
+.six {
+    top: 455px;
+}
+
+.eight {
+    right: 280px;
+    top: 495px;
+}
+
+.seven {
+    top: 522px;
+    left: 215px;
+}
+
+/* .eight {
+    top: 630px;
+} */
+
+.one,
+.five {
+    left: 300px;
+}
+
+.two,
+.four,
+.six {
+    left: 100px;
+}
+
+.nine,
+.eleven,
+.thirteen {
+    right: 100px;
+}
+
+.ten,
+.twelve {
+    right: 300px;
+}
+
+.description {
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+}
+
+.description p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+#process {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #58817c;
+    padding-bottom: 35px;
+}
+
+.our-process {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.step img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.step {
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-title {
+    font-size: 35px;
+    margin: 5px 0;
+    color: #000;
+}
+
+.process-title {
+    font-size: 58px;
+    margin: 5px 0 20px 0;
+}
+
+.step-desc {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0;
 }
