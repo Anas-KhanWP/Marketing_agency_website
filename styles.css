@@ -18,6 +18,7 @@
 
 .second-card {
     grid-column: span 1;
+    width: 250px;
     /* max-width: 270px; */
     /* Set max-width to 270px */
     /* justify-self: center; */
@@ -40,7 +41,7 @@
 
 .text-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -50,6 +51,12 @@
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    height: 91%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
 }
 
 .card:hover .text-overlay {
@@ -188,11 +195,11 @@
 }
 
 #process {
-    color: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #58817c;
+    /* background-color: #58817c; */
     padding-bottom: 35px;
 }
 
@@ -237,4 +244,35 @@
     padding: 5px;
     border-radius: 10px;
     margin: 0;
+}
+
+.card .img-title {
+    font-size: 31px;
+    margin: 0;
+}
+
+.card p {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+}
+
+.second-card p,
+.taketwo p {
+    font-size: 14px !important;
+}
+
+.second-card .img-title,
+.taketwo .img-title {
+    font-size: 23px;
+}
+
+.fit-pos {
+    object-position: 0 -95px;
+}
+
+.fit-img {
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+    object-position: top;
 }
