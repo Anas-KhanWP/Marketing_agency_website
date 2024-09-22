@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .slider {
+            position: relative;
+        }
+
+        .wrap {
+            position: relative;
+            top: -400px;
+            width: 300px;
+            height: 800px;
+            margin: auto;
+            overflow: hidden;
+
+            img {
+                display: block;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="wrap">
+            <img src="http://growwitheuan.com/wp-content/uploads/2024/09/EC-logo-e1726989514119.png" alt="" class="slide" data-info="Info for Slide 1">
+            <img src="https://dummyimage.com/600x400/000/fff&text=2" alt="" class="slide" data-info="Info for Slide 1">
+            <img src="http://growwitheuan.com/wp-content/uploads/2024/09/EC-logo-e1726989514119.png" alt="" class="slide" data-info="Info for Slide 1">
+            <img src="https://dummyimage.com/600x400/000/fff&text=4" alt="" class="slide" data-info="Info for Slide 1">
+            <img src="http://growwitheuan.com/wp-content/uploads/2024/09/EC-logo-e1726989514119.png" alt="" class="slide" data-info="Info for Slide 1">
+        </div>
+    </div>
+
+    <div id="slide-info"></div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const slideInfo = document.getElementById('slide-info');
+        const slider = document.querySelectorAll('.slider');
+
+        // Function to move the slide info to the mouse position
+        function updateInfoPosition(e) {
+            // Set the position of slide-info based on the mouse coordinates
+            slideInfo.style.left = `${e.pageX + 10}px`;  // Offset by 10px to avoid overlap
+            slideInfo.style.top = `${e.pageY + 10}px`;
+        }
+        slides.forEach(slide => {
+            slide.addEventListener('mouseenter', (e) => {
+                slideInfo.textContent = slide.getAttribute('data-info');
+                slideInfo.style.opacity = '1';  // Make it visible
+                updateInfoPosition(e);  // Initial position update
+                // Update position on mouse move
+                slide.addEventListener('mousemove', updateInfoPosition);
+            });
+
+            slide.addEventListener('mouseleave', () => {
+                // Resume the slider
+                slider.classList.remove('paused');
+                // Hide and reset info text
+                slideInfo.textContent = '';
+                slideInfo.style.opacity = '0';  // Hide the info when not hovering
+                // Remove the mousemove event listener to stop updating position
+                slide.removeEventListener('mousemove', updateInfoPosition);
+            });
+        });
+    </script>
+
+    <script>
+        let kaScroll = (function ($) {
+            let s;
+
+            return {
+                settings: {
+                    $wrap: $(".wrap")
+                },
+
+                init: function () {
+                    s = this.settings;
+                    this.bindUIActions();
+                },
+
+                bindUIActions: function () {
+                    kaScroll.slideOne();
+                },
+
+                slideOne: function () {
+                    s.$wrap.find('img').first().animate(
+                        {
+                            height: "toggle"
+                        },
+                        10000,
+                        "linear",
+                        function () {
+                            kaScroll.appendEnd();
+                        }
+                    );
+                },
+
+                appendEnd: function () {
+                    s.$wrap.find('img').first().appendTo(".wrap").show();
+                    kaScroll.slideOne();
+                }
+
+            };
+        })(jQuery);
+        kaScroll.init();
+    </script>
+</body>
+
+</html>
